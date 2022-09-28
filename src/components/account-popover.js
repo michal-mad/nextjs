@@ -3,7 +3,6 @@ import Router from 'next/router';
 import PropTypes from 'prop-types';
 import { Box, MenuItem, MenuList, Popover, Typography } from '@mui/material';
 import { AuthContext } from '../contexts/auth-context';
-import { auth } from '../lib/auth';
 
 export const AccountPopover = (props) => {
   const { anchorEl, onClose, open, ...other } = props;
@@ -11,21 +10,6 @@ export const AccountPopover = (props) => {
 
   const handleSignOut = async () => {
     onClose?.();
-
-    try {
-      // This can be call inside AuthProvider component, but we do it here for simplicity
-      await auth.signOut();
-
-      // Update Auth Context state
-      authContext.signOut();
-
-      // Redirect to sign-in page
-      Router
-        .push('/sign-in')
-        .catch(console.error);
-    } catch (err) {
-      console.error(err);
-    }
   };
 
   return (

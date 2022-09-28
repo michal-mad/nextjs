@@ -3,6 +3,10 @@ import Head from "next/head";
 import { DashboardLayout } from "../components/dashboard-layout";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import React from "react";
+import { Typography, Paper, Button } from "@mui/material";
+import { Search as SearchIcon } from "../icons/search";
+import { Upload as UploadIcon } from "../icons/upload";
+import { Download as DownloadIcon } from "../icons/download";
 
 const columns: GridColDef[] = [
   {
@@ -53,14 +57,40 @@ const Page = () => {
         }}
       >
         <Container maxWidth={false}>
-          <h1>Bundle</h1>
           <Box
             sx={{
-              px: 5,
-              width: "100%",
+              alignItems: "center",
+              display: "flex",
+              justifyContent: "space-between",
+              flexWrap: "wrap",
+              m: -1,
             }}
           >
-            <DataGrid autoHeight columns={columns} rows={rows} />
+            <Typography sx={{ m: 1 }} variant="h4">
+              Bundles
+            </Typography>
+            <Box sx={{ m: 1 }}>
+              <Button startIcon={<UploadIcon fontSize="small" />} sx={{ mr: 1 }}>
+                Import
+              </Button>
+              <Button startIcon={<DownloadIcon fontSize="small" />} sx={{ mr: 1 }}>
+                Export
+              </Button>
+              <Button color="primary" variant="contained">
+                Add Bundle
+              </Button>
+            </Box>
+          </Box>
+
+          <Box
+            sx={{
+              width: "100%",
+              mt: 3,
+            }}
+          >
+            <Paper sx={{ p: 2 }}>
+              <DataGrid autoHeight columns={columns} rows={rows} />
+            </Paper>
           </Box>
         </Container>
       </Box>

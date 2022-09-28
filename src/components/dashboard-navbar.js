@@ -20,7 +20,7 @@ export const DashboardNavbar = (props) => {
   const { onSidebarOpen, ...other } = props;
   const settingsRef = useRef(null);
   const [openAccountPopover, setOpenAccountPopover] = useState(false);
-  const r = useRouter();
+  const router = useRouter();
 
   return (
     <>
@@ -61,7 +61,7 @@ export const DashboardNavbar = (props) => {
                 href="/">
                 home
               </MuiLink></Link>
-            <Typography color="text.primary">{r.asPath.slice(1).toLowerCase()}</Typography>
+            <Typography color="text.primary">{router.asPath.slice(1).toLowerCase()}</Typography>
           </Breadcrumbs>
 
           <Box sx={{ flexGrow: 1 }} />

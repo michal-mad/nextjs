@@ -43,24 +43,9 @@ const items = [
     title: 'Products'
   },
   {
-    href: '/account',
-    icon: (<UserIcon fontSize="small" />),
-    title: 'Account'
-  },
-  {
     href: '/settings',
     icon: (<CogIcon fontSize="small" />),
     title: 'Settings'
-  },
-  {
-    href: '/login',
-    icon: (<LockIcon fontSize="small" />),
-    title: 'Login'
-  },
-  {
-    href: '/register',
-    icon: (<UserAddIcon fontSize="small" />),
-    title: 'Register'
   },
   {
     href: '/404',
@@ -108,6 +93,7 @@ export const DashboardSidebar = (props) => {
             >
               <a>
                 <Logo
+                  variant='light'
                   sx={{
                     height: 42,
                     width: 42
@@ -222,8 +208,8 @@ export const DashboardSidebar = (props) => {
       open={open}
       PaperProps={{
         sx: {
-          backgroundColor: 'neutral.900',
-          color: '#FFFFFF',
+          backgroundColor: 'neutral.200',
+          color: '#000000',
           width: 280
         }
       }}

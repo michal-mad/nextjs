@@ -23,7 +23,7 @@ const App = (props) => {
     <CacheProvider value={emotionCache}>
       <Head>
         <title>
-          Material Kit Pro
+          Credit Suisse
         </title>
         <meta
           name="viewport"
@@ -33,15 +33,7 @@ const App = (props) => {
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <AuthProvider>
-            <AuthConsumer>
-              {
-                (auth) => auth.isLoading
-                  ? <Fragment />
-                  : getLayout(<Component {...pageProps} />)
-              }
-            </AuthConsumer>
-          </AuthProvider>
+          {getLayout(<Component {...pageProps} />)}
         </ThemeProvider>
       </LocalizationProvider>
     </CacheProvider>
