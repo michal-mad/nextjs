@@ -3,7 +3,7 @@ import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import { Box, Button, Divider, Drawer, Typography, useMediaQuery } from '@mui/material';
-import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import ApiIcon from '@mui/icons-material/Api';
 import { ChartBar as ChartBarIcon } from '../icons/chart-bar';
 import { Cog as CogIcon } from '../icons/cog';
 import { Lock as LockIcon } from '../icons/lock';
@@ -21,6 +21,11 @@ const items = [
     href: '/',
     icon: (<ChartBarIcon fontSize="small" />),
     title: 'Dashboard'
+  },
+  {
+    href: '/bundles',
+    icon: (<ApiIcon fontSize="small" />),
+    title: 'Bundles'
   },
   {
     href: '/services',
@@ -140,13 +145,13 @@ export const DashboardSidebar = (props) => {
                   : v3.0
                 </Typography>
               </div>
-              <SelectorIcon
+              {/* <SelectorIcon
                 sx={{
                   color: 'neutral.500',
                   width: 14,
                   height: 14
                 }}
-              />
+              /> */}
             </Box>
           </Box>
         </div>

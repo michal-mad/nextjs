@@ -44,31 +44,27 @@ export default function Page() {
                 // and deconstruct results back into array using spread operator
                 options={
                   [...new Set(services.map(service => service.title))]}
-                renderInput={(params) => {
-                  return (
-                    <>
-                      <TextField
-                        {...params}
-                        InputProps={{
-                          ...params.InputProps,
-                          startAdornment: (
-                            <InputAdornment position="start">
-                              <SvgIcon
-                                fontSize="small"
-                                color="action"
-                              >
-                                <SearchIcon />
-                              </SvgIcon>
-                            </InputAdornment>)
-                        }}
-                        placeholder="Search"
-                      />
-                    </>
-                  )
-                }}
+                renderInput={(params) =>
+                  <TextField
+                    {...params}
+                    InputProps={{
+                      ...params.InputProps,
+                      startAdornment: (
+                        <InputAdornment position="start">
+                          <SvgIcon
+                            fontSize="small"
+                            color="action"
+                          >
+                            <SearchIcon />
+                          </SvgIcon>
+                        </InputAdornment>)
+                    }}
+                    placeholder="Search"
+                  />
+                }
               />
-
-            </Box> </Paper>
+            </Box>
+          </Paper>
           <Box sx={{ pt: 3 }}>
             <Grid
               container

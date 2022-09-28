@@ -59,9 +59,9 @@ export const DashboardNavbar = (props) => {
               <MuiLink underline="hover"
                 color="inherit"
                 href="/">
-                Home
+                home
               </MuiLink></Link>
-            <Typography color="text.primary">{r.asPath.slice(1).toUpperCase()}</Typography>
+            <Typography color="text.primary">{r.asPath.slice(1).toLowerCase()}</Typography>
           </Breadcrumbs>
 
           <Box sx={{ flexGrow: 1 }} />
